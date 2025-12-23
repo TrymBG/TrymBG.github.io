@@ -1,35 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Home from "./components/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Replace this data with your own information
+  const homeData = {
+    name: "Your Name",
+    about:
+      "Passionate software developer with experience in web development and a love for creating elegant solutions to complex problems. Skilled in modern technologies and always eager to learn new things.",
+    githubUrl: "https://github.com/yourusername",
+    linkedinUrl: "https://linkedin.com/in/yourprofile",
+    email: "your.email@gmail.com",
+    // profileImage: "/path-to-your-image.jpg", // Optional: add your profile picture here
+  };
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <Home {...homeData} />;
 }
 
-export default App
+export default App;
