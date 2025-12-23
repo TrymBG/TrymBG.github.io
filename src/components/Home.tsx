@@ -47,7 +47,7 @@ export default function Home({
           )}
           {email && (
             <a href={`mailto:${email}`}>
-              Gmail
+              {email}
             </a>
           )}
         </div>
