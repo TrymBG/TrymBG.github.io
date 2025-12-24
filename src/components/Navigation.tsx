@@ -1,6 +1,6 @@
 interface NavigationProps {
-  currentPage: 'home' | 'cv';
-  onPageChange: (page: 'home' | 'cv') => void;
+  currentPage: 'home' | 'cv' | 'projects';
+  onPageChange: (page: 'home' | 'cv' | 'projects') => void;
 }
 
 export default function Navigation({ currentPage, onPageChange }: NavigationProps) {
@@ -17,6 +17,12 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
         onClick={() => onPageChange('cv')}
       >
         CV
+      </button>
+      <button
+        className={`nav-button ${currentPage === 'projects' ? 'active' : ''}`}
+        onClick={() => onPageChange('projects')}
+      >
+        Projects
       </button>
     </nav>
   );
