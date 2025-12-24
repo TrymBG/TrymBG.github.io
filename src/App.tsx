@@ -134,17 +134,20 @@ function App() {
 
   const projectsData = [
     {
-      image: "https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+1",
-      title: "Project Title 1",
+      images: [
+        "/Superpod list.png",
+        "/Superpod graph.png"
+      ],
+      title: "Superpods",
       description: "A brief description of this project. This is where you explain what the project does and what technologies were used.",
       links: [
-        { label: "GitHub", url: "https://github.com/TrymBG" },
+        { label: "GitHub Private", url: "https://github.com/TrymBG" },
         { label: "Live Demo", url: "#" }
       ]
     },
     {
       image: "https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+2",
-      title: "Project Title 2",
+      title: "HVL Fire",
       description: "Another project description. Explain the key features and your role in developing this project.",
       links: [
         { label: "GitHub", url: "https://github.com/TrymBG" }
@@ -153,9 +156,9 @@ function App() {
     {
       image: "https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+3",
       title: "Story Game",
-      description: "Interactive story game project. Click the Live Demo to watch a walkthrough video of the game.",
+      description: "A simple story driven VR game made in Unity. The game is made as a school project for DAT253 at Western University of Applied Sciences.",
       links: [
-        { label: "GitHub", url: "https://github.com/TrymBG" },
+        { label: "GitHub", url: "https://github.com/TrymBG/Dat259Project" },
         { label: "Live Demo", url: "/StorygameWalkthrough.mp4" }
       ]
     },
@@ -164,7 +167,7 @@ function App() {
       title: "Shader Project",
       description: "Fourth project description. Describe the problem it solves and the impact it has.",
       links: [
-        { label: "GitHub", url: "https://github.com/TrymBG" }
+        { label: "Github", url: "https://github.com/TrymBG" }
       ]
     }
   ];
