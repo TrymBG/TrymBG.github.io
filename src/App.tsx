@@ -152,16 +152,16 @@ function App() {
     },
     {
       image: "https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+3",
-      title: "Project Title 3",
-      description: "Description of your third project. Highlight what makes this project unique or challenging.",
+      title: "Story Game",
+      description: "Interactive story game project. Click the Live Demo to watch a walkthrough video of the game.",
       links: [
         { label: "GitHub", url: "https://github.com/TrymBG" },
-        { label: "Live Demo", url: "#" }
+        { label: "Live Demo", url: "/StorygameWalkthrough.mp4" }
       ]
     },
     {
-      image: "https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+4",
-      title: "Project Title 4",
+      image: "/Oblig 2 dat253 last shader picture.png",
+      title: "Shader Project",
       description: "Fourth project description. Describe the problem it solves and the impact it has.",
       links: [
         { label: "GitHub", url: "https://github.com/TrymBG" }
