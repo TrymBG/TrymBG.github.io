@@ -129,7 +129,13 @@ function App() {
       "Web Technologies": ["React", "HTML", "CSS", "Node.js"],
       "Tools & Platforms": ["Git", "GitHub", "VS Code", "Docker"],
       "Other Skills": ["Problem Solving", "Team Collaboration", "Agile Development"]
-    }
+    },
+    achievements: [
+      {
+        title: "Winner of B-prepared Hackathon",
+        url: "https://www.linkedin.com/posts/b-prepared-horizon-europe-project_bprepared-hackathon-collaboration-activity-7376218541848510464-IgEf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAChDJzoB-456QERjEpufgRNNLfBW_ZkYGhc"
+      }
+    ]
   };
 
   const projectsData = [
@@ -156,7 +162,7 @@ function App() {
     {
       image: "https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+3",
       title: "Story Game",
-      description: "A simple story driven VR game made in Unity. The game is made as a school project for DAT253 at Western University of Applied Sciences.",
+      description: "A simple story driven VR game made in Unity. The game is made as a school exam project for DAT259 at Western University of Applied Sciences.",
       links: [
         { label: "GitHub", url: "https://github.com/TrymBG/Dat259Project" },
         { label: "Live Demo", url: "/StorygameWalkthrough.mp4" }

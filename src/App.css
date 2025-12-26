@@ -180,6 +180,35 @@
   text-decoration: underline;
 }
 
+/* Quick Navigation */
+.cv-quick-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background-color: #262626;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.cv-quick-nav a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cv-quick-nav a:hover {
+  background-color: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+}
+
 /* Section Styles */
 .cv-section {
   margin-bottom: 3rem;
@@ -339,6 +368,42 @@
   left: 0;
   color: #2563eb;
   font-weight: bold;
+}
+
+/* Main Achievements Section - More Prominent */
+.cv-section .achievements {
+  background-color: #262626;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.cv-section .achievements li {
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.cv-section .achievements li::before {
+  content: "▸";
+  font-size: 1.5rem;
+  left: 0;
+  color: #2563eb;
+}
+
+.cv-section .achievements a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.cv-section .achievements a:hover {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
 }
 
 /* Skills Section */

@@ -21,6 +21,10 @@ interface CVData {
     achievements: string[];
   }>;
   skills: Record<string, string[]>;
+  achievements?: Array<{
+    title: string;
+    url?: string;
+  }>;
 }
 
 export default function CV({
@@ -35,6 +39,7 @@ export default function CV({
   experience,
   education,
   skills,
+  achievements,
 }: CVData) {
   return (
     <div className="cv-container">
@@ -61,14 +66,16 @@ export default function CV({
         </div>
       </div>
 
-      {/* About Section */}
-      <div className="cv-section">
-        <h2>About</h2>
-        <p>{about}</p>
-      </div>
+      {/* Quick Navigation */}
+      <nav className="cv-quick-nav">
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+      </nav>
 
       {/* Experience Section */}
-      <div className="cv-section">
+      <div id="experience" className="cv-section">
         <h2>Experience</h2>
         {experience.map((job, index) => (
           <div key={index} className="job">
@@ -92,7 +99,7 @@ export default function CV({
       </div>
 
       {/* Education Section */}
-      <div className="cv-section">
+      <div id="education" className="cv-section">
         <h2>Education</h2>
         {education.map((edu, index) => (
           <div key={index} className="degree">
@@ -114,8 +121,28 @@ export default function CV({
         ))}
       </div>
 
+      {/*Achievements Section */}
+      {achievements && achievements.length > 0 && (
+        <div id="achievements" className="cv-section">
+          <h2>Achievements</h2>
+          <ul className="achievements">
+            {achievements.map((achievement, index) => (
+              <li key={index}>
+                {achievement.url ? (
+                  <a href={achievement.url} target="_blank" rel="noopener noreferrer">
+                    {achievement.title}
+                  </a>
+                ) : (
+                  achievement.title
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Skills Section */}
-      <div className="cv-section">
+      <div id="skills" className="cv-section">
         <h2>Skills</h2>
         <div className="skills-grid">
           {Object.entries(skills).map(([category, skillList]) => (
