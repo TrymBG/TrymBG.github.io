@@ -35,7 +35,6 @@ export default function CV({
   location,
   githubUrl,
   linkedinUrl,
-  about,
   experience,
   education,
   skills,
