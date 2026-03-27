@@ -1,29 +1,17 @@
-interface NavigationProps {
-  currentPage: 'home' | 'cv' | 'projects';
-  onPageChange: (page: 'home' | 'cv' | 'projects') => void;
-}
+import { NavLink } from "react-router-dom";
 
-export default function Navigation({ currentPage, onPageChange }: NavigationProps) {
+export default function Navigation() {
   return (
     <nav className="navigation">
-      <button
-        className={`nav-button ${currentPage === 'home' ? 'active' : ''}`}
-        onClick={() => onPageChange('home')}
-      >
+      <NavLink to="/" end className={({ isActive }) => `nav-button${isActive ? " active" : ""}`}>
         Home
-      </button>
-      <button
-        className={`nav-button ${currentPage === 'cv' ? 'active' : ''}`}
-        onClick={() => onPageChange('cv')}
-      >
+      </NavLink>
+      <NavLink to="/cv" className={({ isActive }) => `nav-button${isActive ? " active" : ""}`}>
         CV
-      </button>
-      <button
-        className={`nav-button ${currentPage === 'projects' ? 'active' : ''}`}
-        onClick={() => onPageChange('projects')}
-      >
+      </NavLink>
+      <NavLink to="/projects" className={({ isActive }) => `nav-button${isActive ? " active" : ""}`}>
         Projects
-      </button>
+      </NavLink>
     </nav>
   );
 }
