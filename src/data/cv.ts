@@ -6,8 +6,6 @@ export const cvData = {
   location: "Bergen, Norway",
   githubUrl: "https://github.com/TrymBG",
   linkedinUrl: "https://www.linkedin.com/in/trym-birkelund-gallefoss-3b627816a/",
-  about:
-    "Currently studying software development at the University of Bergen and working as a research assistant.",
   experience: [
     {
       title: "Research Assistant",
@@ -54,7 +52,7 @@ export const cvData = {
     {
       degree: "Master's Degree in Software Development",
       school: "Western University of Applied Sciences / University of Bergen",
-      date: "January 2025 – present (expected June 2026)",
+      date: "January 2025 – June 2026",
       achievements: [],
     },
     {
@@ -64,12 +62,6 @@ export const cvData = {
       achievements: ["Focus on web development and software engineering"],
     },
   ],
-  skills: {
-    "Programming Languages": ["JavaScript", "TypeScript", "Python", "Java"],
-    "Web Technologies": ["React", "HTML", "CSS", "Node.js"],
-    "Tools & Platforms": ["Git", "GitHub", "VS Code", "Docker"],
-    "Other": ["Problem Solving", "Team Collaboration", "Agile Development"],
-  },
   achievements: [
     {
       title: "Winner of B-prepared Hackathon",

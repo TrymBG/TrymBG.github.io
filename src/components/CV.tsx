@@ -6,7 +6,6 @@ interface CVData {
   location?: string;
   githubUrl?: string;
   linkedinUrl?: string;
-  about: string;
   experience: Array<{
     title: string;
     company: string;
@@ -20,7 +19,6 @@ interface CVData {
     date: string;
     achievements: string[];
   }>;
-  skills: Record<string, string[]>;
   achievements?: Array<{
     title: string;
     url?: string;
@@ -37,125 +35,91 @@ export default function CV({
   linkedinUrl,
   experience,
   education,
-  skills,
   achievements,
 }: CVData) {
   return (
     <div className="cv-container">
-      {/* Header Section */}
+
       <div className="cv-header">
         <h1>{name}</h1>
-        <p className="title">{title}</p>
-        <div className="contact-info">
+        <p className="cv-title">{title}</p>
+        <div className="cv-contact">
           {email && <span>{email}</span>}
           {phone && <span>{phone}</span>}
           {location && <span>{location}</span>}
-        </div>
-        <div className="social-links">
-          {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          )}
-          {linkedinUrl && (
-            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          )}
+          {githubUrl && <a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>}
+          {linkedinUrl && <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
         </div>
       </div>
 
-      {/* Quick Navigation */}
-      <nav className="cv-quick-nav">
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#skills">Skills</a>
-      </nav>
-
-      {/* Experience Section */}
-      <div id="experience" className="cv-section">
+      <section className="cv-section">
         <h2>Experience</h2>
-        {experience.map((job, index) => (
-          <div key={index} className="job">
-            <div className="job-header">
-              <div>
-                <h3 className="job-title">{job.title}</h3>
-                <p className="company">{job.company}</p>
+        <div className="cv-list">
+          {experience.map((job, i) => (
+            <div key={i} className="cv-item">
+              <div className="cv-item-header">
+                <div>
+                  <h3>{job.title}</h3>
+                  <span className="cv-org">{job.company}</span>
+                </div>
+                <div className="cv-item-meta">
+                  <span className="cv-date">{job.date}</span>
+                  <span className="cv-location">{job.location}</span>
+                </div>
               </div>
-              <div className="job-meta">
-                <span className="date">{job.date}</span>
-                <span className="location">{job.location}</span>
-              </div>
-            </div>
-            <ul className="job-description">
-              {job.description.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      {/* Education Section */}
-      <div id="education" className="cv-section">
-        <h2>Education</h2>
-        {education.map((edu, index) => (
-          <div key={index} className="degree">
-            <div className="degree-header">
-              <div>
-                <h3 className="degree-title">{edu.degree}</h3>
-                <p className="school">{edu.school}</p>
-              </div>
-              <span className="date">{edu.date}</span>
-            </div>
-            {edu.achievements.length > 0 && (
-              <ul className="achievements">
-                {edu.achievements.map((achievement, i) => (
-                  <li key={i}>{achievement}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/*Achievements Section */}
-      {achievements && achievements.length > 0 && (
-        <div id="achievements" className="cv-section">
-          <h2>Achievements</h2>
-          <ul className="achievements">
-            {achievements.map((achievement, index) => (
-              <li key={index}>
-                {achievement.url ? (
-                  <a href={achievement.url} target="_blank" rel="noopener noreferrer">
-                    {achievement.title}
-                  </a>
-                ) : (
-                  achievement.title
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Skills Section */}
-      <div id="skills" className="cv-section">
-        <h2>Skills</h2>
-        <div className="skills-grid">
-          {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category} className="skill-category">
-              <h3>{category}</h3>
-              <ul>
-                {skillList.map((skill, i) => (
-                  <li key={i}>{skill}</li>
-                ))}
-              </ul>
+              {job.description.length > 0 && (
+                <div className="cv-item-body">
+                  {job.description.map((line, j) => (
+                    <p key={j}>{line}</p>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      <section className="cv-section">
+        <h2>Education</h2>
+        <div className="cv-list">
+          {education.map((edu, i) => (
+            <div key={i} className="cv-item">
+              <div className="cv-item-header">
+                <div>
+                  <h3>{edu.degree}</h3>
+                  <span className="cv-org">{edu.school}</span>
+                </div>
+                <span className="cv-date">{edu.date}</span>
+              </div>
+              {edu.achievements.length > 0 && (
+                <div className="cv-item-body">
+                  {edu.achievements.map((line, j) => (
+                    <p key={j}>{line}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {achievements && achievements.length > 0 && (
+        <section className="cv-section">
+          <h2>Achievements</h2>
+          <div className="cv-list">
+            {achievements.map((a, i) => (
+              <div key={i} className="cv-item cv-achievement">
+                {a.url ? (
+                  <a href={a.url} target="_blank" rel="noopener noreferrer">{a.title}</a>
+                ) : (
+                  <span>{a.title}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
     </div>
   );
 }

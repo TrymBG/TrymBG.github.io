@@ -130,271 +130,146 @@
 
 /* ===== CV PAGE ===== */
 .cv-container {
-  max-width: 860px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 2.5rem 2rem;
+  padding: 5rem 2rem 3rem;
   color: var(--text);
   line-height: 1.6;
 }
 
 .cv-header {
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .cv-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.4rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
   color: var(--text);
 }
 
-.cv-header .title {
-  font-size: 1.1rem;
+.cv-title {
+  font-size: 1rem;
   color: var(--accent);
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.25rem 0;
   font-weight: 500;
 }
 
-.contact-info {
+.cv-contact {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
   flex-wrap: wrap;
-  font-size: 0.9rem;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  margin-bottom: 0.75rem;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
-}
-
-.social-links a {
-  color: var(--accent);
-  font-weight: 500;
+.cv-contact a {
+  color: var(--text-secondary);
   transition: color 0.2s;
 }
 
-.social-links a:hover {
-  color: var(--accent-hover);
-}
-
-/* Quick Nav */
-.cv-quick-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-  padding: 0.75rem 1rem;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  flex-wrap: wrap;
-}
-
-.cv-quick-nav a {
-  color: var(--text-secondary);
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.cv-quick-nav a:hover {
-  color: var(--text);
-  background-color: var(--surface-raised);
+.cv-contact a:hover {
+  color: var(--accent);
 }
 
 /* CV Sections */
 .cv-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .cv-section h2 {
-  font-size: 1.4rem;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
   font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-.about p {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-}
-
-/* Job / Degree cards */
-.job,
-.degree {
   margin-bottom: 1.25rem;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.job:hover,
-.degree:hover {
-  border-color: #3e3e47;
-  background-color: var(--surface-raised);
+/* CV List */
+.cv-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.job-header,
-.degree-header {
+.cv-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.cv-item-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.75rem;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.job h3,
-.degree h3 {
-  font-size: 1.05rem;
+.cv-item-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text);
   margin: 0 0 0.2rem 0;
-  font-weight: 600;
 }
 
-.job .company,
-.degree .school {
+.cv-org {
+  font-size: 0.875rem;
   color: var(--accent);
   font-weight: 500;
-  margin: 0;
-  font-size: 0.9rem;
 }
 
-.job-meta,
-.degree-meta {
+.cv-item-meta {
   text-align: right;
   flex-shrink: 0;
 }
 
-.date {
+.cv-date {
+  font-size: 0.825rem;
   color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin: 0;
-  font-weight: 500;
   display: block;
 }
 
-.location {
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  margin: 0.2rem 0 0 0;
-  display: block;
-}
-
-.job-description,
-.achievements {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.job-description li,
-.achievements li {
-  padding-left: 1.4rem;
-  margin-bottom: 0.4rem;
-  position: relative;
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-}
-
-.job-description li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-
-.achievements li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-
-/* Main Achievements Section */
-.cv-section .achievements {
-  background-color: var(--surface);
-  border: 1px solid var(--accent);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 0 0 1px var(--accent-glow), 0 4px 16px var(--accent-glow);
-}
-
-.cv-section .achievements li {
-  font-size: 1.05rem;
-  padding-left: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.cv-section .achievements li::before {
-  content: "▸";
-  font-size: 1.1rem;
-  color: var(--accent);
-}
-
-.cv-section .achievements a {
-  color: var(--accent);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.cv-section .achievements a:hover {
-  border-bottom-color: var(--accent);
-}
-
-/* Skills */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-category h3 {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin: 0 0 0.75rem 0;
-  font-weight: 600;
-}
-
-.skill-category ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skill-category li {
-  padding: 0.35rem 0;
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  position: relative;
-  padding-left: 1.25rem;
-}
-
-.skill-category li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: bold;
+.cv-location {
   font-size: 0.8rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.cv-item-body {
+  margin-top: 0.75rem;
+}
+
+.cv-item-body p {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.cv-item-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Achievements */
+.cv-achievement {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.cv-achievement a {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+  padding-bottom: 1px;
+}
+
+.cv-achievement a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* ===== PROJECTS PAGE ===== */
