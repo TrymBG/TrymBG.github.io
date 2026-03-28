@@ -24,7 +24,7 @@ export const projectsData: Project[] = [
     links: [{ label: "GitHub", url: "https://github.com/TrymBG" }],
   },
   {
-    image: "",
+    image: "/Cabin.png",
     title: "Story Game",
     description:
       "A simple story-driven VR game made in Unity. Created as a school exam project for DAT259 at Western University of Applied Sciences.",
