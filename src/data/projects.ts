@@ -11,7 +11,7 @@ export const projectsData: Project[] = [
     images: ["/Superpod list.png", "/Superpod graph.png"],
     title: "Superpods",
     description:
-      "Research project at the University of Bergen. A brief description of this project — what it does and what technologies were used.",
+      "Segmented podcast search with list and graph visualization.",
     links: [
       { label: "GitHub (Private)", url: "https://github.com/TrymBG" },
     ],
@@ -20,7 +20,7 @@ export const projectsData: Project[] = [
     image: "",
     title: "HVL Fire",
     description:
-      "Another project description. Explain the key features and your role in developing this project.",
+      "VR fire evacuation simulation built in Unity.",
     links: [{ label: "GitHub", url: "https://github.com/TrymBG" }],
   },
   {

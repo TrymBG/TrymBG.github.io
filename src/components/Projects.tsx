@@ -20,6 +20,7 @@ export default function Projects({ projects }: ProjectsProps) {
 
   return (
     <div className="projects-container">
+      <h1>Projects</h1>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <div key={index} className="project-card">
